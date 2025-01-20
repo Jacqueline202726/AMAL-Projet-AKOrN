@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from source.data.datasets.sudoku.sudoku import SudokuDataset, HardSudokuDataset
 from source.models.sudoku.knet import SudokuAKOrN
 from source.models.sudoku.transformer import SudokuTransformer
-from source.evals import compute_board_accuracy
+from source.evals.sudoku.evals import compute_board_accuracy
 from source.utils import str2bool
 from ema_pytorch import EMA
 import argparse
