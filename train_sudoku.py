@@ -128,7 +128,7 @@ if __name__ == "__main__":
     writer = SummaryWriter(jobdir)
 
     # only compute digit-wise accuracy
-    from source.evals import compute_board_accuracy
+    from source.evals.sudoku.evals import compute_board_accuracy
     def compute_acc(net, loader):
         net.eval()
         correct = 0
@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
             out = net(X, is_input)
             
-            out = out.reshape(-1, 9)
+            out = out.reshape(-1, 9)  # [B, 9, 9, 9]
             Y = Y.argmax(dim=-1).reshape(-1)
             
             loss = criterion(out, Y).mean()
